@@ -1,3 +1,15 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Please Enter Your Information</h1>
+  <%= simple_form_for @job do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :email %>
+    <%= f.submit 'Create', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+
+
 
 <br />
 <div class="booyah-box col-10 offset-1 text-center">
@@ -6,6 +18,7 @@
       <h1><%= job.name %></h1>
       <i><%= job.address %></i>
       <p><%= job.email %></p>
+      <hr />
     </div>
   <% end %>
 </div>
