@@ -7,7 +7,11 @@ class JobsController < ApplicationController
 
   def create
     Job.create(job_params)
-    redirect_to root_path
+    if @job.valid?
+      redirect_to root_path
+    else 
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
