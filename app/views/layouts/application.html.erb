@@ -27,6 +27,13 @@
       </div>
     </nav>
 
+    
+    <% if flash[:error].present? %>
+      <div class="col-10 offset-1 alert alert-danger">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
     <% end %>

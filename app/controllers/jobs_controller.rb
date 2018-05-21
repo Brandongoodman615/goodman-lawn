@@ -6,7 +6,8 @@ class JobsController < ApplicationController
   end
 
   def create
-    Job.create(job_params)
+    @jobs = Job.all
+    @job = Job.create(job_params)
     if @job.valid?
       redirect_to root_path
     else 
