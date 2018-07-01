@@ -15,16 +15,15 @@
   <br /><br />
 </div>
 
-
-
-
 <br />
 <div class="booyah-box col-10 offset-1 text-center">
-  <% @jobs.each do |job| %>
+  <% @jobs.each do |j| %>
     <div>
-      <h1><%= job.name %></h1>
-      <i><%= job.address %></i>
-      <p><%= job.email %></p>
+      <h1><%= j.name %></h1>
+      <i><%= j.address %></i>
+      <p><%= j.email %></p>
+      <p><%= j.latitude %></p>
+      <p><%= j.longitude %></p>
       <hr />
     </div>
   <% end %>

@@ -6,13 +6,16 @@ class JobsController < ApplicationController
   end
 
   def create
-    @jobs = Job.all
     @job = Job.create(job_params)
     if @job.valid?
-      redirect_to root_path
+      redirect_to @job
     else 
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @job = Job.find(params[:id])
   end
 
   private
